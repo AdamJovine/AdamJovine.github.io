@@ -1,7 +1,14 @@
+// components/Banner.jsx
 import React from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Banner = () => {
+  const router = useRouter();
+
+  const handleNavigation = (page) => {
+    router.push(`/${page}`);
+  };
+
   return (
     <div style={{
       width: '100%',
@@ -62,15 +69,10 @@ const Banner = () => {
       }}>
         {/* Navigation Buttons */}
         <div style={{ display: 'flex', flex: 1 }}>
-          {[
-            { slug: 'about-me', label: 'about me' },
-            { slug: 'projects', label: 'projects' },
-            { slug: 'publications', label: 'publications' },
-            { slug: 'awards', label: 'awards' }
-          ].map((item, index) => (
-            <React.Fragment key={item.slug}>
-              <Link
-                href={`/${item.slug}`}
+          {['about-me', 'projects', 'publications', 'awards'].map((page, index) => (
+            <React.Fragment key={page}>
+              <button
+                onClick={() => handleNavigation(page)}
                 style={{
                   flex: 1,
                   backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -86,8 +88,7 @@ const Banner = () => {
                   WebkitBackdropFilter: 'blur(5px)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  textDecoration: 'none'
+                  justifyContent: 'center'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
@@ -96,8 +97,8 @@ const Banner = () => {
                   e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
                 }}
               >
-                {item.label}
-              </Link>
+                {page.replace('-', ' ')}
+              </button>
               {index < 3 && (
                 <div style={{
                   width: '2px',
