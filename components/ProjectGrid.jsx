@@ -24,6 +24,13 @@ const ProjectGrid = () => {
       description: 'Distributional MIPLIB benchmarks',
       status: 'MIPLIB'
     },
+    {
+      slug: 'final-exam-scheduling',
+      title: 'Scheduling Team',
+      description: "Lead Cornell's largest undergraduate research organization. Scheduling courses, prelims, and finals.",
+      status: 'IJAA'
+    },
+
     // Add more projects as needed
   ];
 

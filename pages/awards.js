@@ -78,7 +78,7 @@ const Awards = () => {
               <span className="award-bullet">🏆</span>
               <div className="award-content">
                 <div className="award-title">1st Place, Cornell Undergraduate Research Board (CURB) Symposium</div>
-                <div className="award-description">2024 · Also received 2nd Place in 2023 and 2025</div>
+                <div className="award-description">2024 · Also received 2nd Place in 2023 and 2025. Annual research presentation of all Undergraduate researchers https://www.cornellcurb.com/.  </div>
               </div>
             </div>
 
@@ -86,7 +86,7 @@ const Awards = () => {
               <span className="award-bullet">👨‍🏫</span>
               <div className="award-content">
                 <div className="award-title">Teaching Excellence Award</div>
-                <div className="award-description">Cornell TA of the Year – Spring 2025</div>
+                <div className="award-description">Cornell TA of the Year – Spring 2025, Voted by the students, who were asked who their most impactful TA was.  I recieved it for TAing ORIE 3310 with Professor Shmoys. </div>
               </div>
             </div>
 
@@ -94,7 +94,7 @@ const Awards = () => {
               <span className="award-bullet">🔬</span>
               <div className="award-content">
                 <div className="award-title">CRA Outstanding Undergraduate Researcher</div>
-                <div className="award-description">Computing Research Association – 2024</div>
+                <div className="award-description">Computing Research Association – 2024, won for my IJAA research on Exam Scheduling optimization</div>
               </div>
             </div>
 
