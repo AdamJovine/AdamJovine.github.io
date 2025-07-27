@@ -1,5 +1,3 @@
-
-// pages/projects/[slug].js (Dynamic project pages)
 import { useRouter } from 'next/router';
 import Banner from '../../components/Banner';
 
@@ -36,11 +34,8 @@ const projectData = {
   }
 };
 
-export default function ProjectDetail() {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  if (!slug || !projectData[slug]) {
+export default function ProjectDetail({ project, slug }) {
+  if (!project) {
     return (
       <div>
         <style jsx global>{`
@@ -60,8 +55,6 @@ export default function ProjectDetail() {
       </div>
     );
   }
-
-  const project = projectData[slug];
 
   return (
     <div>
@@ -222,4 +215,33 @@ export default function ProjectDetail() {
       </div>
     </div>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = Object.keys(projectData).map((slug) => ({
+    params: { slug }
+  }));
+
+  return {
+    paths,
+    fallback: false
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const project = projectData[slug];
+
+  if (!project) {
+    return {
+      notFound: true
+    };
+  }
+
+  return {
+    props: {
+      project,
+      slug
+    }
+  };
 }
