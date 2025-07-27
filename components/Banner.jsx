@@ -6,7 +6,7 @@ const Banner = () => {
   const router = useRouter();
 
   const handleNavigation = (page) => {
-    router.push(`/${page}`);
+    window.location.href = `/${page}/`;
   };
 
   return (
