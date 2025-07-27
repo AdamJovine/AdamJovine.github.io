@@ -71,8 +71,8 @@ const Banner = () => {
         <div style={{ display: 'flex', flex: 1 }}>
           {['about-me', 'projects', 'publications', 'awards'].map((page, index) => (
             <React.Fragment key={page}>
-              <button
-                onClick={() => handleNavigation(page)}
+              <a
+                href={`/${page}/`}
                 style={{
                   flex: 1,
                   backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -88,7 +88,8 @@ const Banner = () => {
                   WebkitBackdropFilter: 'blur(5px)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
@@ -98,7 +99,7 @@ const Banner = () => {
                 }}
               >
                 {page.replace('-', ' ')}
-              </button>
+              </a>
               {index < 3 && (
                 <div style={{
                   width: '2px',
