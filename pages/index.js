@@ -57,7 +57,7 @@ const AboutMe = () => {
             </p>
 
             <p style={{ marginBottom: '1.5rem' }}>
-              Beyond research, I'm passionate about teaching, playing the Piano, JS Bach, and cooking.
+              Beyond research, I'm passionate about teaching, playing the piano, and gardening.
               Feel free to email me, if you would like to talk.
             </p>
           </div>
