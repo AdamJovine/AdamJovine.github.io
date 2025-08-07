@@ -75,7 +75,7 @@ const Awards = () => {
           <h2 className="section-title">Awards & Recognition</h2>
           <div className="awards-content" style={{ color: '#374151' }}>
             <div className="award-item">
-              <span className="award-bullet">🏆</span>
+              <span className="award-bullet"></span>
               <div className="award-content">
                 <div className="award-title">1st Place, Cornell Undergraduate Research Board (CURB) Symposium</div>
                 <div className="award-description">2024 · Also received 2nd Place in 2023 and 2025. Annual research presentation of all Undergraduate researchers https://www.cornellcurb.com/.  </div>
@@ -83,7 +83,7 @@ const Awards = () => {
             </div>
 
             <div className="award-item">
-              <span className="award-bullet">👨‍🏫</span>
+              <span className="award-bullet"></span>
               <div className="award-content">
                 <div className="award-title">Teaching Excellence Award</div>
                 <div className="award-description">Cornell TA of the Year – Spring 2025, Voted by the students, who were asked who their most impactful TA was.  I recieved it for TAing ORIE 3310 with Professor Shmoys. </div>
@@ -91,7 +91,7 @@ const Awards = () => {
             </div>
 
             <div className="award-item">
-              <span className="award-bullet">🔬</span>
+              <span className="award-bullet"></span>
               <div className="award-content">
                 <div className="award-title">CRA Outstanding Undergraduate Researcher</div>
                 <div className="award-description">Computing Research Association – 2024, won for my IJAA research on Exam Scheduling optimization</div>
@@ -99,15 +99,15 @@ const Awards = () => {
             </div>
 
             <div className="award-item">
-              <span className="award-bullet">📊</span>
+              <span className="award-bullet"></span>
               <div className="award-content">
                 <div className="award-title">Mogensen Research Excellence Award</div>
-                <div className="award-description">Omega Rho Honors Scholar</div>
+                <div className="award-description">Given for my exams scheduling research. Awarded to the best researcher in the department.</div>
               </div>
             </div>
 
             <div className="award-item">
-              <span className="award-bullet">📚</span>
+              <span className="award-bullet"></span>
               <div className="award-content">
                 <div className="award-title">Dean's List</div>
                 <div className="award-description">Cornell University – Spring 2021 to Spring 2025</div>
