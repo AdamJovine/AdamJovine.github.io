@@ -8,13 +8,15 @@ const projectData = {
   'reflective-optimization': {
     title: 'Reflective Optimization',
     description: 'Enhancing scheduling decisions with LLM‑guided trade‑off reasoning.',
-    images: [],
+    images: ['images/automl1', 'images/automl2'],
     website: 'https://github.com/your-org/reflective-optimization',
-    fullDescription: `This project explores the intersection of Large Language Models and optimization algorithms to create more intelligent scheduling systems. By incorporating reflective reasoning capabilities, we can make more nuanced trade-off decisions in complex scheduling scenarios.`,
+    fullDescription: `
+    This project explores the application of Large Langauge Models as Surrogate Decision Makers. We propose LISTEN (LLM-based Iterative Selection with Trade-off Evaluation) which helps decision makers guide optimization and filter multi-objective options using natural langauge. 
+    Our paper was accepted to AutoML 2025. We found that model quality, prompt design, and the number of iterations all significantly impact the effectiveness of LLMs in this role. LISTEN outperforms traditional methods like Pareto front analysis in terms of user satisfaction and decision quality. `,
     technologies: ['Python', 'PyTorch', 'OpenAI API', 'Integer Programming', 'Machine Learning'],
     status: 'In submission to NeurIPS 2025',
     authors: 'A. Jovine, P. Frazier, D. Shmoys, T. Ye',
-    paper: '/papers/reflective-optimization.pdf'
+    paper: '/papers/AutoMLWorkshop.pdf'
   },
   'blade-bo': {
     title: 'BLADE‑BO',
@@ -28,7 +30,7 @@ const projectData = {
     technologies: ['Python', 'Bayesian Optimization', 'Quality Diversity', 'Scheduling Algorithms'],
     status: 'In submission to AutoML 2025',
     authors: 'A. Jovine, P. Frazier, D. Shmoys, T. Ye',
-    paper: '/papers/AutoMLWorkshop.pdf'
+    paper: '/papers/blade.pdf'
   },
   'exam-scheduling-benchmarks': {
     title: 'Exam Scheduling Benchmarks',
