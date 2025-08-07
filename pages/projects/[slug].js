@@ -8,7 +8,7 @@ const projectData = {
   'reflective-optimization': {
     title: 'Reflective Optimization',
     description: 'Enhancing scheduling decisions with LLM‑guided trade‑off reasoning.',
-    images: ['images/automl1.png', 'images/automl2.png'],
+    images: ['/images/automl1.png', '/images/automl2.png'],
     website: 'https://github.com/your-org/reflective-optimization',
     fullDescription: `
     This project explores the application of Large Langauge Models as Surrogate Decision Makers. We propose LISTEN (LLM-based Iterative Selection with Trade-off Evaluation) which helps decision makers guide optimization and filter multi-objective options using natural langauge. 
