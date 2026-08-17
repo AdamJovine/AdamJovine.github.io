@@ -57,7 +57,7 @@ const Banner = () => {
             fontWeight: '300',
             textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
           }}>
-            New York, New York ⋄ <a href="mailto:asj53@cornell.edu" style={{ color: 'white', textDecoration: 'underline' }}>asj53@cornell.edu</a>
+            Cambridge, Massachusetts ⋄ <a href="mailto:jovine@mit.edu" style={{ color: 'white', textDecoration: 'underline' }}>jovine@mit.edu</a>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ const Banner = () => {
       }}>
         {/* Navigation Buttons */}
         <div style={{ display: 'flex', flex: 1 }}>
-          {['about-me', 'projects', 'publications', 'awards'].map((page, index) => (
+          {['about-me', 'publications', 'awards'].map((page, index, pages) => (
             <React.Fragment key={page}>
               <a
                 href={`/${page}/`}
@@ -100,7 +100,7 @@ const Banner = () => {
               >
                 {page.replace('-', ' ')}
               </a>
-              {index < 3 && (
+              {index < pages.length - 1 && (
                 <div style={{
                   width: '2px',
                   backgroundColor: 'white',

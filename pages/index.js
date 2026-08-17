@@ -50,7 +50,16 @@ const AboutMe = () => {
             </p>
 
             <p style={{ marginBottom: '1.5rem' }}>
-              Currently, I'm working in <a href="https://people.orie.cornell.edu/pfrazier/" target="_blank" rel="noopener noreferrer">Professor Frazier's Lab</a> on projects that combine Large Language Models with traditional
+              I'm currently a first-year SM student at MIT, advised by <a href="https://mitsloan.mit.edu/faculty/directory/retsef-levi" target="_blank" rel="noopener noreferrer">Retsef Levi</a> and <a href="https://mitsloan.mit.edu/faculty/directory/georgia-perakis" target="_blank" rel="noopener noreferrer">Georgia Perakis</a>.
+            </p>
+
+            <p style={{ marginBottom: '1.5rem' }}>
+              Before that, I spent a year at <a href="https://optimaldynamics.com/" target="_blank" rel="noopener noreferrer">Optimal Dynamics</a> working under Warren Powell, where I implemented
+              reinforcement learning environments and used predict-then-optimize max flow to optimize truck scheduling.
+            </p>
+
+            <p style={{ marginBottom: '1.5rem' }}>
+              At Cornell, I worked in <a href="https://people.orie.cornell.edu/pfrazier/" target="_blank" rel="noopener noreferrer">Professor Frazier's Lab</a> on projects that combine Large Language Models with traditional
               optimization methods to create more intelligent and adaptive decision-making systems. My work on
               reflective optimization and quality diversity methods has been recognized at multiple conferences
               and symposiums.
