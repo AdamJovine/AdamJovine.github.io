@@ -57,7 +57,7 @@ const Banner = () => {
             fontWeight: '300',
             textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
           }}>
-            Cambridge, Massachusetts ⋄ <a href="mailto:jovine@mit.edu" style={{ color: 'white', textDecoration: 'underline' }}>jovine@mit.edu</a>
+            Cambridge, Massachusetts ⋄ jovine [at] mit [dot] edu
           </div>
         </div>
       </div>

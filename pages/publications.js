@@ -48,30 +48,23 @@ const Publications = () => {
           <h2 className="section-title">Publications</h2>
           <div style={{ color: '#374151' }}>
             <div className="publication-item">
-              <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>Reflective Optimization</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>(in submission to NeurIPS 2025)</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', marginBottom: '0.25rem' }}>A. Jovine, P. Frazier, D. Shmoys, T. Ye</p>
-              <p style={{ fontSize: '0.875rem' }}>Enhancing scheduling decisions with LLM‑guided trade‑off reasoning.</p>
-            </div>
-
-            <div className="publication-item">
-              <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>BLADE‑BO</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>(in submission to AutoML 2025)</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', marginBottom: '0.25rem' }}>A. Jovine, P. Frazier, D. Shmoys, T. Ye</p>
-              <p style={{ fontSize: '0.875rem' }}>Quality diversity optimization for exam scheduling.</p>
-            </div>
-
-            <div className="publication-item">
-              <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>Exam Scheduling Benchmarking for IP‑ML</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>(in submission to MIPLIB)</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', marginBottom: '0.25rem' }}>T. Ye, A. Jovine</p>
-              <p style={{ fontSize: '0.875rem' }}>Distributional MIPLIB benchmarks.</p>
+              <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>
+                <a href="https://arxiv.org/abs/2510.25799" target="_blank" rel="noopener noreferrer" style={{ color: '#1f2937' }}>
+                  LISTEN to Your Preferences: An LLM Framework for Multi-Objective Selection
+                </a>
+              </p>
+              <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>arXiv:2510.25799 (2025)</p>
+              <p style={{ fontSize: '0.875rem', color: '#4b5563' }}>A. S. Jovine, T. Ye, F. Bahk, J. Wang, M. Ford, D. B. Shmoys, P. I. Frazier</p>
             </div>
 
             <div className="publication-item publication-published">
-              <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>Integer Programming to Optimize Final Exam Scheduling</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>(INFORMS IJAA 2025)</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563' }}>T. Ye, A. Jovine, W. Van Osselaer, Q. Zhu, D. Shmoys.</p>
+              <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>
+                <a href="https://doi.org/10.1287/inte.2024.0165" target="_blank" rel="noopener noreferrer" style={{ color: '#1f2937' }}>
+                  Cornell University Uses Integer Programming to Optimize Final Exam Scheduling
+                </a>
+              </p>
+              <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>INFORMS Journal on Applied Analytics, 56(2):159–177</p>
+              <p style={{ fontSize: '0.875rem', color: '#4b5563' }}>T. Ye, A. S. Jovine, W. Van Osselaer, Q. Zhu, D. B. Shmoys</p>
             </div>
           </div>
         </div>
