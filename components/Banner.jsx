@@ -187,6 +187,43 @@ const Banner = () => {
           >
             GitHub
           </a>
+
+          <div style={{
+            width: '2px',
+            backgroundColor: 'white',
+            opacity: 0.6
+          }} />
+
+          <a
+            href="https://scholar.google.com/citations?user=ve_NbCMAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              width: '120px',
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              border: 'none',
+              color: 'white',
+              fontSize: '1.2rem',
+              fontWeight: '500',
+              cursor: 'pointer',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(5px)',
+              WebkitBackdropFilter: 'blur(5px)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              textDecoration: 'none'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = 'rgba(66, 133, 244, 0.6)'; // Google blue
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+            }}
+          >
+            Scholar
+          </a>
         </div>
       </div>
     </div>
