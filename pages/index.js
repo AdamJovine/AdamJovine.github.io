@@ -42,13 +42,6 @@ const AboutMe = () => {
               color: '#374151',
             }}
           >
-            <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>
-              I'm a Software Engineer and Researcher. I graduated from Cornell as a Computer Science and Operations Research major.
-              I love solving complex optimization problems using cutting-edge machine learning techniques. My research
-              focuses on the intersection of artificial intelligence and mathematical optimization, particularly
-              in developing novel approaches for scheduling and resource allocation problems.
-            </p>
-
             <p style={{ marginBottom: '1.5rem' }}>
               I'm currently a first-year SM student at MIT, advised by <a href="https://mitsloan.mit.edu/faculty/directory/retsef-levi" target="_blank" rel="noopener noreferrer">Retsef Levi</a> and <a href="https://mitsloan.mit.edu/faculty/directory/georgia-perakis" target="_blank" rel="noopener noreferrer">Georgia Perakis</a>.
             </p>
