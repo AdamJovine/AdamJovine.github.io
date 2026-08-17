@@ -1,5 +1,28 @@
 import React from 'react';
 import Banner from '../components/Banner';
+import publicationData from '../data/publications.json';
+
+// Scholar writes initials as "AS Jovine"; render them as "A. S. Jovine".
+const formatAuthors = (authors) =>
+  authors
+    .split(',')
+    .map((name) =>
+      name
+        .trim()
+        .split(' ')
+        .map((token) =>
+          /^[A-Z]{1,3}$/.test(token) ? token.split('').map((c) => `${c}.`).join(' ') : token
+        )
+        .join(' ')
+    )
+    .join(', ');
+
+// data/publications.json is rewritten weekly by scripts/sync-scholar.mjs.
+// Hand-curated corrections live in its "overrides" map and win here.
+const publications = publicationData.publications.map((pub) => ({
+  ...pub,
+  ...(publicationData.overrides?.[pub.id] ?? {}),
+}));
 
 const Publications = () => {
   return (
@@ -10,12 +33,12 @@ const Publications = () => {
           min-height: 100vh;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
         }
-          
+
         .content-container {
           margin-bottom: 3rem;
           padding: 2rem 0;
         }
-        
+
         .section-title {
           font-size: 1.5rem;
           font-weight: 700;
@@ -25,7 +48,7 @@ const Publications = () => {
           border-bottom: 2px solid rgba(113, 121, 139, 0.4);
           font-family: Georgia, serif;
         }
-        
+
         .publication-item {
           border-left: 4px solid #71798b;
           padding-left: 1rem;
@@ -35,7 +58,7 @@ const Publications = () => {
           border-radius: 8px;
           padding: 1rem 1rem 1rem 2rem;
         }
-        
+
         .publication-published {
           border-left-color: #10b981;
         }
@@ -47,25 +70,23 @@ const Publications = () => {
         <div className="content-container">
           <h2 className="section-title">Publications</h2>
           <div style={{ color: '#374151' }}>
-            <div className="publication-item">
-              <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>
-                <a href="https://arxiv.org/abs/2510.25799" target="_blank" rel="noopener noreferrer" style={{ color: '#1f2937' }}>
-                  LISTEN to Your Preferences: An LLM Framework for Multi-Objective Selection
-                </a>
-              </p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>arXiv:2510.25799 (2025)</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563' }}>A. S. Jovine, T. Ye, F. Bahk, J. Wang, M. Ford, D. B. Shmoys, P. I. Frazier</p>
-            </div>
-
-            <div className="publication-item publication-published">
-              <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>
-                <a href="https://doi.org/10.1287/inte.2024.0165" target="_blank" rel="noopener noreferrer" style={{ color: '#1f2937' }}>
-                  Cornell University Uses Integer Programming to Optimize Final Exam Scheduling
-                </a>
-              </p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>INFORMS Journal on Applied Analytics, 56(2):159–177</p>
-              <p style={{ fontSize: '0.875rem', color: '#4b5563' }}>T. Ye, A. S. Jovine, W. Van Osselaer, Q. Zhu, D. B. Shmoys</p>
-            </div>
+            {publications.map((pub) => (
+              <div
+                key={pub.id}
+                className={`publication-item${pub.published ? ' publication-published' : ''}`}
+              >
+                <p style={{ fontWeight: '600', color: '#1f2937', marginBottom: '0.25rem' }}>
+                  <a href={pub.url} target="_blank" rel="noopener noreferrer" style={{ color: '#1f2937' }}>
+                    {pub.title}
+                  </a>
+                </p>
+                <p style={{ fontSize: '0.875rem', color: '#4b5563', fontStyle: 'italic', marginBottom: '0.25rem' }}>
+                  {pub.venue}
+                  {pub.year ? ` (${pub.year})` : ''}
+                </p>
+                <p style={{ fontSize: '0.875rem', color: '#4b5563' }}>{formatAuthors(pub.authors)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

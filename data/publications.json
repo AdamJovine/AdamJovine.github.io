@@ -1,0 +1,30 @@
+{
+  "source": "https://scholar.google.com/citations?user=ve_NbCMAAAAJ&hl=en",
+  "generated": "2026-08-17",
+  "overrides": {
+    "ve_NbCMAAAAJ:u-x6o8ySG0sC": {
+      "title": "Cornell University Uses Integer Programming to Optimize Final Exam Scheduling",
+      "url": "https://doi.org/10.1287/inte.2024.0165"
+    }
+  },
+  "publications": [
+    {
+      "id": "ve_NbCMAAAAJ:u-x6o8ySG0sC",
+      "title": "Cornell University uses integer programming to optimize final exam scheduling",
+      "authors": "T Ye, AS Jovine, W Van Osselaer, Q Zhu, DB Shmoys",
+      "venue": "INFORMS Journal on Applied Analytics 56 (2), 159-177",
+      "year": 2026,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ve_NbCMAAAAJ&citation_for_view=ve_NbCMAAAAJ:u-x6o8ySG0sC",
+      "published": true
+    },
+    {
+      "id": "ve_NbCMAAAAJ:u5HHmVD_uO8C",
+      "title": "LISTEN to Your Preferences: An LLM Framework for Multi-Objective Selection",
+      "authors": "AS Jovine, T Ye, F Bahk, J Wang, M Ford, DB Shmoys, PI Frazier",
+      "venue": "arXiv:2510.25799",
+      "year": 2025,
+      "url": "https://arxiv.org/abs/2510.25799",
+      "published": false
+    }
+  ]
+}
