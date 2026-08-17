@@ -1,0 +1,109 @@
+name: Sync publications from Google Scholar
+
+on:
+  schedule:
+    # Mondays, 12:17 UTC. Off-the-hour to avoid Actions' peak-minute queueing.
+    - cron: '17 12 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+# Share the deploy workflow's group so the two never race on Pages.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Exits 2 without writing if Scholar is unreachable, CAPTCHAs, or
+      # yields no parseable rows — a bad scrape must never wipe the page.
+      - name: Fetch Google Scholar
+        id: scrape
+        continue-on-error: true
+        run: node scripts/sync-scholar.mjs
+
+      - name: Open an issue if Scholar could not be read
+        if: steps.scrape.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          existing=$(gh issue list --label scholar-sync --state open --json number --jq 'length')
+          if [ "$existing" = "0" ]; then
+            gh label create scholar-sync --color ededed --description "Scholar sync failures" 2>/dev/null || true
+            gh issue create \
+              --title "Weekly Scholar sync could not read the profile" \
+              --label scholar-sync \
+              --body "The weekly sync failed to read the Google Scholar profile — most likely a CAPTCHA served to the Actions runner IP. The publications page was left untouched. Run log: $RUN_URL"
+          fi
+          exit 1
+
+      - name: Commit changes
+        id: commit
+        run: |
+          if git diff --quiet -- data/publications.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No publication changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/publications.json
+          git commit -m "Sync publications from Google Scholar"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  # A push made with GITHUB_TOKEN does not trigger deploy.yml, so this
+  # workflow has to build and deploy the updated site itself.
+  deploy:
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
