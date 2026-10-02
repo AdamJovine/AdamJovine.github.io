@@ -43,11 +43,11 @@ const AboutMe = () => {
             }}
           >
             <p style={{ marginBottom: '1.5rem' }}>
-              I'm currently a first-year SM student at MIT, advised by <a href="https://mitsloan.mit.edu/faculty/directory/retsef-levi" target="_blank" rel="noopener noreferrer">Retsef Levi</a> and <a href="https://mitsloan.mit.edu/faculty/directory/georgia-perakis" target="_blank" rel="noopener noreferrer">Georgia Perakis</a>.
+              I'm currently a first-year SM student at MIT, advised by <a href="https://mitsloan.mit.edu/faculty/directory/retsef-levi" target="_blank" rel="noopener noreferrer">Retsef Levi</a> and <a href="https://mitsloan.mit.edu/faculty/directory/georgia-perakis" target="_blank" rel="noopener noreferrer">Georgia Perakis</a>, where I work on OR theory and AI.
             </p>
 
             <p style={{ marginBottom: '1.5rem' }}>
-              Before that, I spent a year at <a href="https://optimaldynamics.com/" target="_blank" rel="noopener noreferrer">Optimal Dynamics</a> working under Warren Powell, where I implemented
+              Before that, I spent a year at <a href="https://optimaldynamics.com/" target="_blank" rel="noopener noreferrer">Optimal Dynamics</a> working under <a href="https://warrenpowell.org/" target="_blank" rel="noopener noreferrer">Warren Powell</a>, where I implemented
               reinforcement learning environments and used predict-then-optimize max flow to optimize truck scheduling.
             </p>
 
@@ -55,7 +55,7 @@ const AboutMe = () => {
               At Cornell, I worked in <a href="https://people.orie.cornell.edu/pfrazier/" target="_blank" rel="noopener noreferrer">Professor Frazier's Lab</a> on projects that combine Large Language Models with traditional
               optimization methods to create more intelligent and adaptive decision-making systems. My work on
               reflective optimization and quality diversity methods has been recognized at multiple conferences
-              and symposiums.
+              and symposiums. I also worked with <a href="https://people.orie.cornell.edu/shmoys/" target="_blank" rel="noopener noreferrer">David Shmoys</a> on final exam scheduling.
             </p>
 
             <p style={{ marginBottom: '1.5rem' }}>
