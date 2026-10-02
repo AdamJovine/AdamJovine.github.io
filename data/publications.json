@@ -1,6 +1,6 @@
 {
   "source": "https://scholar.google.com/citations?user=ve_NbCMAAAAJ&hl=en",
-  "generated": "2026-08-17",
+  "generated": "2026-10-02",
   "overrides": {
     "ve_NbCMAAAAJ:u-x6o8ySG0sC": {
       "title": "Cornell University Uses Integer Programming to Optimize Final Exam Scheduling",
@@ -16,6 +16,15 @@
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ve_NbCMAAAAJ&citation_for_view=ve_NbCMAAAAJ:u-x6o8ySG0sC",
       "published": true
+    },
+    {
+      "id": "ve_NbCMAAAAJ:d1gkVwhDpl0C",
+      "title": "LLM-Derived Preference Judgments Are Not Self-Consistent",
+      "authors": "MT Ford, F Bahk, J Wang, AS Jovine, T Ye, DB Shmoys, PI Frazier",
+      "venue": "arXiv:2608.17644",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2608.17644",
+      "published": false
     },
     {
       "id": "ve_NbCMAAAAJ:u5HHmVD_uO8C",
